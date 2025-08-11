@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState } from "react";
 
 // export function ColorGame() {
 //   const [color, setColor] = useState(" ");
@@ -12,12 +12,12 @@ import { useState } from 'react';
 //     </div>
 //   );
 // }
- export function ColorGame() {
+export function ColorGame() {
   const [color, setColor] = useState("pink");
   const styles = {
     background: color,
   };
-  const [colors,setColors] = useState(["pink", "purple", "plum", "orange"]);
+  const [colors, setColors] = useState(["pink", "purple", "plum", "orange"]);
   return (
     <div>
       {/* Task 2.2 - Update the background the input */}
@@ -29,17 +29,17 @@ import { useState } from 'react';
         type="text"
       />
       {/* Task 3.2 - Uses colors - Display Color Box */}
-      <button onClick={()=>setColors([...colors,color])}>➕ Add</button>
+      <button onClick={() => setColors([...colors, color])}>➕ Add</button>
 
       {/* Task 3.1 - Uses colors - Display Color Box */}
-      {colors.map(color=>(
-      <ColorBox boxColor={color}/>
+      {colors.map((color) => (
+        <ColorBox boxColor={color} />
       ))}
     </div>
   );
 }
 
-function ColorBox({boxColor}) {
+function ColorBox({ boxColor }) {
   const boxStyles = {
     background: boxColor,
     height: "25px",
@@ -49,4 +49,3 @@ function ColorBox({boxColor}) {
 
   return <div style={boxStyles}></div>;
 }
-
