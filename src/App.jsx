@@ -1,11 +1,10 @@
-import { MovieAdded } from "./MovieAdded";
+import { useEffect, useState } from "react";
+import { Link, Navigate, Route, Routes } from "react-router";
+import { ColorGame } from "./ColorGame";
 import "./index.css";
 import { UserList } from "./UserList";
-import { Counter } from "./Counter";
-import { ColorGame } from "./ColorGame";
-import { Route, Routes, Link, Navigate, useParams } from "react-router";
-import { useEffect, useState } from "react";
-import { Movie } from "./Movie";
+import { MovieList } from "./MovieList";
+import { AddMovie } from "./AddMovie";
 
 export default function App() {
   return (
@@ -13,10 +12,13 @@ export default function App() {
       <nav>
         <ul>
           <li>
+            <Link to="/">Home </Link>
+          </li>
+          <li>
             <Link to="/movies">Movies</Link>
           </li>
           <li>
-            <Link to="/MovieAdded">MovieAdded</Link>
+            <Link to="/add-movie">MovieAdded</Link>
           </li>
           <li>
             <Link to="/colorgame">Color Game </Link>
@@ -24,16 +26,14 @@ export default function App() {
           <li>
             <Link to="/users">Users </Link>
           </li>
-          <li>
-            <Link to="/">Home </Link>
-          </li>
         </ul>
       </nav>
 
       <Routes>
         <Route path="films" element={<Navigate to="/movies" replace />} />
         {/* <Route path="movies" element={<Movie />} /> */}
-        <Route path="movies" element={<MovieAdded />} />
+        <Route path="movies" element={<MovieList />} />
+        <Route path="add-movie" element={<AddMovie />} />
         {/* <Route path="movies/:id" element={<MovieDetails movies={movies} />} /> */}
         <Route path="colorgame" element={<ColorGame />} />
         <Route path="users" element={<UserList />} />
@@ -49,10 +49,9 @@ function Home() {
 }
 function NotFound() {
   return <h1>404 - Not Found </h1>;
-}
 
-function MovieDetails() {
-  const { id } = useParams();
+  // function MovieDetails() {
+  //   const { id } = useParams();
 
   const [movie, setMovie] = useState({});
 
