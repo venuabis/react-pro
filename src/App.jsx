@@ -5,29 +5,41 @@ import "./index.css";
 import { UserList } from "./UserList";
 import { MovieList } from "./MovieList";
 import { AddMovie } from "./AddMovie";
+import AppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
+import Button from "@mui/material/Button";
+import IconButton from "@mui/material/IconButton";
+import MenuIcon from "@mui/icons-material/Menu";
+import { EditMovie } from "./pages/EditMovie";
 
 export default function App() {
+  const navigate = useNavigate();
+
   return (
     <div className="App">
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Home </Link>
-          </li>
-          <li>
-            <Link to="/movies">Movies</Link>
-          </li>
-          <li>
-            <Link to="/add-movie">MovieAdded</Link>
-          </li>
-          <li>
-            <Link to="/colorgame">Color Game </Link>
-          </li>
-          <li>
-            <Link to="/users">Users </Link>
-          </li>
-        </ul>
-      </nav>
+      {/* Common */}
+
+      <AppBar position="static">
+        <Toolbar>
+          <Button color="inherit" onClick={() => navigate("/")}>
+            Home
+          </Button>
+          <Button color="inherit" onClick={() => navigate("/movies")}>
+            Movies
+          </Button>
+          <Button color="inherit" onClick={() => navigate("/movies/new")}>
+            Add Movie
+          </Button>
+          <Button color="inherit" onClick={() => navigate("/color-game")}>
+            Color Game
+          </Button>
+          <Button color="inherit" onClick={() => navigate("/users")}>
+            Users
+          </Button>
+        </Toolbar>
+      </AppBar>
 
       <Routes>
         <Route path="films" element={<Navigate to="/movies" replace />} />
