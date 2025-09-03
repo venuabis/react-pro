@@ -1,0 +1,1 @@
+export const API = "https://bcs-flask-june-2025.onrender.com/api";

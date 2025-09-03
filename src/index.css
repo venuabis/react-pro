@@ -1,6 +1,6 @@
 .App {
   font-family: sans-serif;
- 
+  /* text-align: center; */
 }
 
 .user-container {
@@ -27,7 +27,7 @@
 }
 
 .movie-container {
-  width: 340px;
+  width: 400px;
   border: 1px solid #ccc;
   border-radius: 8px;
   overflow: hidden;
@@ -35,10 +35,10 @@
 }
 
 .movie-poster {
-  height: 640px;
+  height: 540px;
   width: 100%;
   object-fit: cover;
-  border-radius: 6px;
+  /* border-radius: 6px; */
 }
 
 .movie-specs {
@@ -75,7 +75,11 @@
   justify-content: space-around;
   align-items: flex-start;
 
-
+  /* RAM */
+  /* display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  justify-items: center;
+  gap: 32px; */
 }
 
 .counter-btn-container {
@@ -97,11 +101,11 @@ nav {
 }
 
 :root {
- 
+  /* 1rem = 16px */
   font-size: 16px;
 }
 
-
+/* 1rem = 16px */
 .add-movie-form {
   display: grid;
   gap: 0.5rem;
@@ -112,4 +116,29 @@ nav {
 
 .movie-detail-content-container {
   max-width: 60rem;
+  padding-inline: 1rem;
+}
+
+.movie-action-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+body {
+  margin: 0;
+}
+
+.loader-container {
+  display: grid;
+  min-height: 100vh;
+  place-content: center;
+}
+
+.login-form {
+  display: grid;
+  /* Logical properties */
+  margin-block: 1rem;
+  gap: 0.8rem;
+  max-width: 20rem;
+  margin-inline: auto;
 }
